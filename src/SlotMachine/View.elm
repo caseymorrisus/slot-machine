@@ -26,7 +26,8 @@ view model =
     [ div
       [ style "fontWeight" "900", style "fontSize" "1.5rem", style "marginBottom" "5px" ]
       [ text "Bet" ]
-    , div [] [ betButton model 1, betButton model 3, betButton model 5]
+    , div [ style "display" "flex", style "justifyContent" "center" ]
+      [ betButton model 1, betButton model 3, betButton model 5]
     , div [ style "marginBottom" "50px" ] [ text ("Score: " ++ String.fromInt model.score) ]
     , div [ style "display" "flex", style "justifyContent" "center" ]
       [ item model.spin.one
