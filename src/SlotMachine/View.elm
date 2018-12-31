@@ -73,6 +73,8 @@ spinButton model =
       , style "border" "1px solid black"
       , style "padding" "10px 15px"
       , style "cursor" "pointer"
+      , style "textTransform" "uppercase"
+      , style "fontWeight" "900"
       ]
         [ text (getButtonText model.hasSpun) ]
   else
@@ -81,7 +83,9 @@ spinButton model =
 view : Model -> Html Msg
 view model =
   div [ style "textAlign" "center" ]
-    [ div [ style "fontWeight" "900", style "fontSize" "1.5rem" ] [ text "Bet" ]
+    [ div
+      [ style "fontWeight" "900", style "fontSize" "1.5rem", style "marginBottom" "5px" ]
+      [ text "Bet" ]
     , div [] [ betButton model 1, betButton model 3, betButton model 5]
     , div [ style "marginBottom" "50px" ] [ text ("Score: " ++ String.fromInt model.score) ]
     , div [ style "display" "flex", style "justifyContent" "center" ]
