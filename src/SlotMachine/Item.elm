@@ -1,4 +1,4 @@
-module SlotMachine.Item exposing (item)
+module SlotMachine.Item exposing (view)
 
 import SlotMachine.Types exposing(..)
 import Html exposing (..)
@@ -14,7 +14,7 @@ printSymbol symbolToPrint =
     Bell -> "Bell"
     NotSpun -> "N/A"
 
-item : Symbol -> Html Msg
-item symbol =
+view : Symbol -> Html Msg
+view symbol =
   div [ style "marginRight" "10px" ]
     [ text (printSymbol symbol) ]

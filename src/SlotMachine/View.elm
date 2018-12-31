@@ -6,10 +6,10 @@ import Html.Events exposing (..)
 import Html.Attributes exposing (..)
 import SlotMachine.Types exposing (..)
 import SlotMachine.State exposing (..)
-import SlotMachine.SpinButton exposing (spinButton)
-import SlotMachine.BetButton exposing (betButton)
-import SlotMachine.Result exposing (result)
-import SlotMachine.Item exposing (item)
+import SlotMachine.SpinButton as SpinButton
+import SlotMachine.BetButton as BetButton
+import SlotMachine.Result as Result
+import SlotMachine.Item as Item
 
 main =
   Browser.element
@@ -27,13 +27,13 @@ view model =
       [ style "fontWeight" "900", style "fontSize" "1.5rem", style "marginBottom" "5px" ]
       [ text "Bet" ]
     , div [ style "display" "flex", style "justifyContent" "center" ]
-      [ betButton model 1, betButton model 3, betButton model 5]
+      [ BetButton.view model 1, BetButton.view model 3, BetButton.view model 5]
     , div [ style "marginBottom" "50px" ] [ text ("Score: " ++ String.fromInt model.score) ]
     , div [ style "display" "flex", style "justifyContent" "center" ]
-      [ item model.spin.one
-      , item model.spin.two
-      , item model.spin.three
+      [ Item.view model.spin.one
+      , Item.view model.spin.two
+      , Item.view model.spin.three
       ]
-    , result model
-    , spinButton model
+    , Result.view model
+    , SpinButton.view model
     ]

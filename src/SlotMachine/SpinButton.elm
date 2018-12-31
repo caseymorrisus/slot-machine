@@ -1,4 +1,4 @@
-module SlotMachine.SpinButton exposing (spinButton)
+module SlotMachine.SpinButton exposing (view)
 
 import SlotMachine.Types exposing (..)
 import Html exposing (..)
@@ -8,8 +8,8 @@ import Html.Events exposing (..)
 getButtonText : Bool -> String
 getButtonText hasSpun = if hasSpun then "Spin Again" else "Spin Wheel"
 
-spinButton :  Model -> Html Msg
-spinButton model =
+view :  Model -> Html Msg
+view model =
   if (model.score - model.bet) >= 0 then
     button
       [ onClick SpinWheels

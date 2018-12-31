@@ -1,4 +1,4 @@
-module SlotMachine.Result exposing (result)
+module SlotMachine.Result exposing (view)
 
 import SlotMachine.Types exposing (..)
 import SlotMachine.State exposing (didWin, getPrize)
@@ -23,7 +23,7 @@ getPrizeFromSpin spinToTest bet =
   else
     0
 
-result : Model -> Html Msg
-result model =
+view : Model -> Html Msg
+view model =
   div [ style "marginTop" "50px", style "marginBottom" "10px" ]
     [ text (printResult model) ]

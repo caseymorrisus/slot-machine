@@ -1,4 +1,4 @@
-module SlotMachine.BetButton exposing (betButton)
+module SlotMachine.BetButton exposing (view)
 
 import SlotMachine.Types exposing(..)
 import Html exposing (..)
@@ -12,8 +12,8 @@ getButtonColor model bet =
   else
     "white"
 
-betButton : Model -> Int -> Html Msg
-betButton model bet =
+view : Model -> Int -> Html Msg
+view model bet =
   button
     [ onClick (ChangeBet bet)
     , style "backgroundColor" (getButtonColor model bet)
