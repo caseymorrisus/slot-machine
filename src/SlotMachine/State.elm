@@ -3,6 +3,8 @@ module SlotMachine.State exposing (init, update, subscriptions, didWin, getPrize
 import Random
 import SlotMachine.Types exposing (..)
 
+initialScore = 100
+
 initialSpin : Spin
 initialSpin =
   { one = NotSpun
@@ -12,7 +14,7 @@ initialSpin =
 
 init : () -> (Model, Cmd Msg)
 init _ =
-  ( Model initialSpin False 100 1
+  ( Model initialSpin False initialScore 1
   , Cmd.none
   )
 
