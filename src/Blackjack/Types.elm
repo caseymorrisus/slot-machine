@@ -13,16 +13,8 @@ type Msg =
 type Suit = Spades | Hearts | Diamonds | Clubs
 
 type Rank =
+  NumRank Int |
   Ace |
-  Two |
-  Three |
-  Four |
-  Five |
-  Six |
-  Seven |
-  Eight |
-  Nine |
-  Ten |
   Jack |
   Queen |
   King

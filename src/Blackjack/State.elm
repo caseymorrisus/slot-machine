@@ -9,8 +9,14 @@ import Random.List exposing (..)
 suits : List Suit
 suits = [ Spades, Hearts, Diamonds, Clubs ]
 
+numRanks : List Rank
+numRanks = List.map (\number -> NumRank number) (List.range 2 10)
+
+faceRanks : List Rank
+faceRanks = [ Ace, Jack, Queen, King ]
+
 ranks : List Rank
-ranks = [ Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King ]
+ranks = numRanks ++ faceRanks
 
 getRankAndSuit : Suit -> List Card
 getRankAndSuit suit = List.map (\rank -> (rank, suit)) ranks

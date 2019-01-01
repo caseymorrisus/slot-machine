@@ -10,16 +10,19 @@ import Blackjack.State exposing (..)
 displayRank : Rank -> String
 displayRank rank =
   case rank of
+    NumRank number ->
+      case number of
+        2 -> "Two"
+        3 -> "Three"
+        4 -> "Four"
+        5 -> "Five"
+        6 -> "Six"
+        7 -> "Seven"
+        8 -> "Eight"
+        9 -> "Nine"
+        10 -> "Ten"
+        _ -> "Invalid Rank"
     Ace -> "Ace"
-    Two -> "Two"
-    Three -> "Three"
-    Four -> "Four"
-    Five -> "Five"
-    Six -> "Six"
-    Seven -> "Seven"
-    Eight -> "Eight"
-    Nine -> "Nine"
-    Ten -> "Ten"
     Jack -> "Jack"
     Queen -> "Queen"
     King -> "King"
